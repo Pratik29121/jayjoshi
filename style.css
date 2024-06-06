@@ -1,0 +1,957 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Existing CSS */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #310434;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #310434;
+}
+/* navbar styling */
+nav{
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: 'Ubuntu', sans-serif;
+}
+nav.sticky{
+  background: #310434;
+  padding: 8px 0;
+}
+nav .navbar{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+nav .navbar .logo a{
+  font-weight: 500;
+  font-size: 20px;
+  color: #000309;
+}
+nav.sticky .navbar .logo a{
+  color: #fff;
+}
+nav .navbar .menu{
+  display: flex;
+  position: relative;
+}
+nav .navbar .menu li{
+  list-style: none;
+  margin: 0 30px;
+}
+.navbar .menu a{
+  font-size: 18px;
+  font-weight: 500;
+  color: #0E2431;
+  padding: 6px 0;
+  transition: all 0.4s ease;
+}
+.navbar .menu a:hover{
+  color: #310434;
+}
+nav.sticky .menu a{
+  color: #FFF;
+}
+nav.sticky .menu a:hover{
+  color: #0E2431;
+}
+.navbar .media-icons a{
+  color: #090002;
+  font-size: 18px;
+  margin: 0 6px;
+}
+nav.sticky .media-icons a{
+  color: #FFF;
+}
+
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn{
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+nav .menu-btn{
+  color: #310434;
+}
+nav.sticky .menu-btn{
+  color: #FFF;
+}
+.navbar .menu .menu-btn{
+  color: #fff;
+}
+
+/* home section styling */
+.home {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/abt.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(5px); /* Adjust the blur level as needed */
+  z-index: -1; /* Ensures the background image stays behind the content */
+}
+
+.home .home-content {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* Ensures the content stays above the background image */
+}
+
+.home .text-one {
+  font-size: 25px;
+  color: #0E2431;
+}
+
+.home .text-two {
+  color: #0E2431;
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.home .text-three {
+  font-size: 40px;
+  margin: 5px 0;
+  color: #000105;
+}
+
+.home .text-four {
+  font-size: 23px;
+  margin: 5px 0;
+  color: #0E2431;
+}
+
+.home .button {
+  margin: 14px 0;
+}
+
+.home .button button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #310434;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.home .button button:hover {
+  border-color: #310434;
+  background-color: #fff;
+  color: #310434;
+}
+
+/* Media queries to handle different screen sizes */
+@media (max-width: 768px) {
+  .home::before {
+    filter: blur(6px); /* Reduce blur for smaller screens */
+  }
+
+  .home .text-two {
+    font-size: 50px; /* Adjust font size for smaller screens */
+  }
+
+  .home .text-three {
+    font-size: 30px; /* Adjust font size for smaller screens */
+  }
+
+  .home .text-four {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .home .button button {
+    font-size: 20px; /* Adjust button size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .home::before {
+    filter: blur(4px); /* Further reduce blur for very small screens */
+  }
+
+  .home .text-two {
+    font-size: 35px; /* Further adjust font size for very small screens */
+  }
+
+  .home .text-three {
+    font-size: 25px; /* Further adjust font size for very small screens */
+  }
+
+  .home .text-four {
+    font-size: 18px; /* Further adjust font size for very small screens */
+  }
+
+  .home .button button {
+    font-size: 18px; /* Further adjust button size for very small screens */
+  }
+}
+
+
+/* About Section Styling */
+/* Those Elements Where We Have Apply Same CSS,
+ I'm Selecting Directly 'Section Tag' and 'Class'  */
+section{
+  padding-top: 40px;
+}
+section .content{
+  width: 80%;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+}
+.about .about-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+section .title span{
+  color: #0E2431;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+section .title span::before,
+section .title span::after{
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #310434;
+  left: 0;
+  bottom: 0;
+}
+section .title span::after{
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about .about-details .left{
+  width: 45%;
+}
+.about .left img{
+  height: 500px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.about-details .right{
+  width: 55%;
+}
+section  .topic{
+  color: #0E2431;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.about-details .right p{
+  text-align: justify;
+  color: #0E2431;
+}
+section .button{
+  margin: 16px 0;
+}
+section .button button{
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #310434;
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+section .button button:hover{
+  border-color: #310434;
+  background-color: #fff;
+  color: #310434;
+}
+
+/* Gallery Section Styling */
+.gallery {
+  background: #F0F8FF;
+}
+.gallery .content {
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+}
+
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+  animation: slideInFromRight 1s ease;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide img {
+  max-width: 65%;
+  height: auto;
+}
+
+.gallery .title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.gallery .title span {
+  color: #0E2431;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+.gallery .title span::before,
+.gallery .title span::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #310434;
+  left: 0;
+  bottom: 0;
+}
+.gallery .title span::after {
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.gallery .carousel {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+.gallery .carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+.gallery .image {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+.gallery .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+
+/* My Services CSS */
+.services .boxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.services .boxes .box{
+  margin: 20px 0;
+  width: calc(100% / 3 - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover{
+  background: #310434;
+  color: #fff;
+}
+.services .boxes .box .icon{
+  height: 50px;
+  width: 50px;
+  background: #310434;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto 10px auto;
+  transition: all 0.4s ease;
+}
+.boxes .box:hover .icon{
+  background-color: #fff;
+  color: #310434;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p{
+  color: #0E2431;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p{
+  color: #fff;
+}
+
+/* Add the following CSS to style the collaboration section */
+.collaboration {
+  padding: 50px 0;
+  background: #f7f7f7;
+}
+
+.collaboration .title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.collaboration .swiper-container {
+  padding: 20px 0;
+}
+
+.collaboration .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collaboration .swiper-slide img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.collaboration .swiper-slide p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .collaboration .swiper-container {
+    padding: 10px 0;
+  }
+  .collaboration .swiper-slide img {
+    width: 80px;
+    height: 80px;
+  }
+  .collaboration .swiper-slide p {
+    font-size: 14px;
+  }
+}
+
+/* Contact Me CSS */
+.contact{
+  background: #F0F8FF;
+}
+.contact .content{
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.contact .text{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Footer CSS */
+footer{
+  background: #310434;
+  padding: 15px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+footer .text span{
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+}
+footer .text span a{
+  font-weight: 500;
+  color: #FFF;
+}
+footer .text span a:hover{
+  text-decoration: underline;
+}
+/* Scroll TO Top Button CSS */
+.scroll-button a{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #310434;
+  padding: 7px 12px;;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;#000;@500&display=swap');
+
+/* For Swiper Slider */
+.swiper-container {
+  margin-top: 20px;
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.swiper-slide {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* For Contact Section */
+.contact {
+  background: #f8f8f8;
+  padding: 5px 0;
+}
+
+.contact .content {
+  text-align: center;
+}
+
+.contact .title span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.contact .text {
+  margin: 50px 0;
+}
+
+.contact .topic {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact .contact-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact .input-box {
+  margin-bottom: 20px;
+}
+
+.contact .input-box input,
+.contact .input-box textarea {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact .input-box textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact .button {
+  text-align: center;
+}
+
+.contact .button button {
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact .button button:hover {
+  background: #555;
+}
+
+/* For Social Icons */
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #555;
+}
+
+/* For Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* For Mobile Responsiveness */
+/* For Mobile Responsiveness */
+@media (max-width: 750px) {
+  nav .navbar{
+    width: 90%;
+  }
+  nav .navbar .menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #0E2431;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  .navbar.active .menu{
+    left: 0;
+  }
+  nav .navbar .menu a{
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+  }
+  nav.sticky .menu a:hover{
+    color: #310434;
+  }
+  nav .navbar .media-icons{
+    display: none;
+  }
+  nav .menu-btn,
+  .navbar .menu .cancel-btn{
+    display: block;
+  }
+  .home .text-two{
+    font-size: 65px;
+  }
+  .home .text-three{
+    font-size: 35px;
+  }
+  .skills .skills-details{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .skills-details .text{
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .skills-details .boxes{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: 100%;
+  }
+  .contact .text{
+    width: 100%;
+}
+  /* Keep Jay Joshi title in the top-left corner */
+  .navbar .logo a {
+    margin: 0; /* Remove any existing margins */
+  }
+}
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content{
+    width: 85%;
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .about-details .left{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-details .right{
+    width: 90%;
+    margin: 40px 0;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media (max-width: 900px) {
+  .about .left img{
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 750px) {
+  nav .navbar{
+    width: 90%;
+  }
+  nav .navbar .menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #0E2431;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  .navbar.active .menu{
+    left: 0;
+  }
+  nav .navbar .menu a{
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+  }
+  nav.sticky .menu a:hover{
+    color: #310434;
+  }
+  nav .navbar .media-icons{
+    display: none;
+  }
+  nav .menu-btn,
+  .navbar .menu .cancel-btn{
+    display: block;
+  }
+  .home .text-two{
+    font-size: 65px;
+  }
+  .home .text-three{
+    font-size: 35px;
+  }
+  .skills .skills-details{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .skills-details .text{
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .skills-details .boxes{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: 100%;
+  }
+  .contact .text{
+    width: 100%;
+}
+}
+
+@media (max-width: 500px){
+  .home .text-two{
+    font-size: 55px;
+  }
+  .home .text-three{
+    font-size: 33px;
+  }
+  .skills-details .boxes .per{
+    font-size: 50px;
+    color: #310434;
+  }
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
