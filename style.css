@@ -1,9 +1,8 @@
-/* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 /* Existing CSS */
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,22 +12,23 @@
 
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-    background: #310434;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+  background: #310434;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #310434;
+  background: #310434;
 }
+
 /* navbar styling */
-nav{
+nav {
   position: fixed;
   width: 100%;
   padding: 20px 0;
@@ -36,61 +36,61 @@ nav{
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
 }
-nav.sticky{
+nav.sticky {
   background: #310434;
   padding: 8px 0;
 }
-nav .navbar{
+nav .navbar {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 }
-nav .navbar .logo a{
+nav .navbar .logo a {
   font-weight: 500;
   font-size: 20px;
-  color: #000309;
+  color: #f1f6f9;
 }
-nav.sticky .navbar .logo a{
+nav.sticky .navbar .logo a {
   color: #fff;
 }
-nav .navbar .menu{
+nav .navbar .menu {
   display: flex;
   position: relative;
 }
-nav .navbar .menu li{
+nav .navbar .menu li {
   list-style: none;
   margin: 0 30px;
 }
-.navbar .menu a{
+.navbar .menu a {
   font-size: 18px;
   font-weight: 500;
-  color: #0E2431;
+  color: #f1f6f9;
   padding: 6px 0;
   transition: all 0.4s ease;
 }
-.navbar .menu a:hover{
+.navbar .menu a:hover {
   color: #310434;
 }
-nav.sticky .menu a{
-  color: #FFF;
+nav.sticky .menu a {
+  color: #fff;
 }
-nav.sticky .menu a:hover{
-  color: #0E2431;
+nav.sticky .menu a:hover {
+  color: #0e2431;
 }
-.navbar .media-icons a{
+.navbar .media-icons a {
   color: #090002;
   font-size: 18px;
   margin: 0 6px;
 }
-nav.sticky .media-icons a{
-  color: #FFF;
+nav.sticky .media-icons a {
+  color: #fff;
 }
 
 /* Side Navigation Menu Button CSS */
 nav .menu-btn,
-.navbar .menu .cancel-btn{
+.navbar .menu .cancel-btn {
   position: absolute;
   color: #fff;
   right: 30px;
@@ -100,13 +100,13 @@ nav .menu-btn,
   transition: all 0.3s ease;
   display: none;
 }
-nav .menu-btn{
-  color: #310434;
+nav .menu-btn {
+  color: #f1f6f9;
 }
-nav.sticky .menu-btn{
-  color: #FFF;
+nav.sticky .menu-btn {
+  color: #fff;
 }
-.navbar .menu .menu-btn{
+.navbar .menu .menu-btn {
   color: #fff;
 }
 
@@ -126,7 +126,7 @@ nav.sticky .menu-btn{
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("images/abt.jpg") no-repeat center center;
+  background: url("images/desktop-wallpaper-portfolio-thumbnail.jpg") no-repeat center center;
   background-size: cover;
   filter: blur(5px); /* Adjust the blur level as needed */
   z-index: -1; /* Ensures the background image stays behind the content */
@@ -145,30 +145,40 @@ nav.sticky .menu-btn{
 
 .home .text-one {
   font-size: 25px;
-  color: #0E2431;
+  color: #f1f6f9;
+  opacity: 0;
+  animation: fadeIn 2s forwards 0.5s;
 }
 
 .home .text-two {
-  color: #0E2431;
+  color: #f1f6f9;
   font-size: 75px;
   font-weight: 600;
   margin-left: -3px;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s;
 }
 
 .home .text-three {
   font-size: 40px;
   margin: 5px 0;
-  color: #000105;
+  color: #f1f6f9;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1.5s;
 }
 
 .home .text-four {
   font-size: 23px;
   margin: 5px 0;
-  color: #0E2431;
+  color: #f1f6f9;
+  opacity: 0;
+  animation: fadeIn 2s forwards 2s;
 }
 
 .home .button {
   margin: 14px 0;
+  opacity: 0;
+  animation: fadeIn 2s forwards 2.5s;
 }
 
 .home .button button {
@@ -188,6 +198,13 @@ nav.sticky .menu-btn{
   border-color: #310434;
   background-color: #fff;
   color: #310434;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Media queries to handle different screen sizes */
@@ -235,6 +252,98 @@ nav.sticky .menu-btn{
   }
 }
 
+@media (max-width: 480px) {
+  .home::before {
+    filter: blur(4px); /* Further reduce blur for very small screens */
+  }
+
+  .home .text-two {
+    font-size: 35px; /* Further adjust font size for very small screens */
+  }
+
+  .home .text-three {
+    font-size: 25px; /* Further adjust font size for very small screens */
+  }
+
+  .home .text-four {
+    font-size: 18px; /* Further adjust font size for very small screens */
+  }
+
+  .home .button button {
+    font-size: 18px; /* Further adjust button size for very small screens */
+  }
+}
+
+.projects-section {
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card h3 {
+  margin: 20px 0 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.project-card a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #310434;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+  background-color: #310434;
+}
+.project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
@@ -324,12 +433,60 @@ section .button button:hover{
 }
 
 /* Gallery Section Styling */
-.gallery {
+ /* My Skills CSS */
+ .skills{
   background: #F0F8FF;
 }
-.gallery .content {
-  text-align: center;
+.skills .content{
+  padding: 0;
 }
+.skills .skills-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills-details .text{
+  width: 50%;
+}
+.skills-details p{
+  color: #0E2431;
+  text-align: justify;
+}
+.skills .skills-details .experience{
+ display: flex;
+ align-items: center;
+ margin: 0 10px;
+}
+.skills-details .experience .num{
+ color: #0E2431;
+ font-size: 80px;
+}
+.skills-details .experience .exp{
+ color: #0E2431;
+ margin-left: 20px;
+ font-size: 18px;
+ font-weight: 500;
+ margin: 0 6px;
+}
+.skills-details .boxes{
+ width: 45%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+}
+.skills-details .box{
+ width: calc(100% / 2 - 20px);
+ margin: 20px 0;
+}
+.skills-details .boxes .topic{
+ font-size: 20px;
+ color: #310434;
+}
+.skills-details .boxes .per{
+ font-size: 60px;
+ color: #310434;
+}
+
 
 .carousel {
   display: flex;
@@ -465,7 +622,7 @@ section .button button:hover{
 
 /* Add the following CSS to style the collaboration section */
 .collaboration {
-  padding: 50px 0;
+  padding: 20px 0;
   background: #f7f7f7;
 }
 
@@ -678,7 +835,6 @@ footer a {
 }
 
 /* For Mobile Responsiveness */
-/* For Mobile Responsiveness */
 @media (max-width: 750px) {
   nav .navbar{
     width: 90%;
@@ -741,10 +897,9 @@ footer a {
   }
   .contact .text{
     width: 100%;
-}
-  /* Keep Jay Joshi title in the top-left corner */
+  }
   .navbar .logo a {
-    margin: 0; /* Remove any existing margins */
+    margin: 0;
   }
 }
 
@@ -858,8 +1013,6 @@ footer a {
   }
 
 }
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body{
   line-height: 1.5;
@@ -947,7 +1100,7 @@ ul{
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
-}
+  }
 }
 @media(max-width: 574px){
   .footer-col{
